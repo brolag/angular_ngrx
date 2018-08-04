@@ -1,6 +1,9 @@
-<h4>Contact List</h4>
-<ul class="list-group">
-  <li *ngFor="let contact of contacts | async" class="list-group-item">
-    <app-contact [contact]="contact"></app-contact>
+<div *ngIf="!(contacts | async)?.length" class=" alert alert-primary " role="alert ">
+  There are no contacts!
+</div>
+<h4 *ngIf="(contacts | async)?.length ">Contact List</h4>
+<ul class="list-group ">
+  <li *ngFor="let contact of contacts | async; let i=i ndex " class="list-group-item ">
+    <app-contact [contact]="contact " [index]="index "></app-contact>
   </li>
 </ul>

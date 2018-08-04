@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Contact } from "../../store/interfaces";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { AppState, Contact } from "../../store/interfaces";
+import { RemoveContact } from "../../store/actions";
 
 @Component({
   selector: "app-contact",
@@ -8,8 +11,13 @@ import { Contact } from "../../store/interfaces";
 })
 export class ContactComponent implements OnInit {
   @Input() contact: Contact;
+  @Input() index: number;
 
-  constructor() {}
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {}
+
+  removeContact() {
+    this.store.dispatch(new RemoveContact(this.index));
+  }
 }

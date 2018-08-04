@@ -1,6 +1,9 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{{contact.name}}</h5>
-    <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+    <p>
+      <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+    </p>
+    <button class="btn btn-danger btn-small" (click)="removeContact()">Delete</button>
   </div>
 </div>
