@@ -1,0 +1,11 @@
+<div class="col col-6 contact-form">
+  <div class="form-group">
+    <label for="contactName">Contact Name:</label>
+    <input id="contactName" type="text" class="form-control" placeholder="Enter your name" #name>
+  </div>
+  <div class="form-group">
+    <label for="contactEmail">Contact Email:</label>
+    <input id="contactEmail" class="form-control" type="text" placeholder="Enter your email" #email>
+  </div>
+  <button class="btn btn-primary" (click)="addContact(name.value, email.value)">Add a Contact</button>
+</div>

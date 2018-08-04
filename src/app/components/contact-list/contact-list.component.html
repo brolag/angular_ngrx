@@ -1,0 +1,6 @@
+<h4>Contact List</h4>
+<ul class="list-group">
+  <li *ngFor="let contact of contacts | async" class="list-group-item">
+    <app-contact [contact]="contact"></app-contact>
+  </li>
+</ul>
