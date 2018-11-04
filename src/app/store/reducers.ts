@@ -8,6 +8,7 @@ import {
 } from './actions';
 
 export function contactReducer(state: Contact[] = [], action: ContactActions) {
+  console.log('STORE', state);
   switch (action.type) {
     case ContactActionTypes.ADD_CONTACT:
       return [...state, action.payload];
