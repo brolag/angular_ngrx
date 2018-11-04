@@ -1,4 +1,11 @@
-<div *ngIf="!(contacts | async)?.length" class=" alert alert-primary " role="alert ">
+<div *ngFor="let message of messages | async; let i=index " class=" alert alert-success " role="alert ">
+  {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div *ngIf="!(contacts | async)?.length" class=" alert alert-danger " role="alert ">
   There are no contacts!
 </div>
 <h4 *ngIf="(contacts | async)?.length ">Contact List</h4>
